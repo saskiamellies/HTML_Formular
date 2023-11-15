@@ -1,0 +1,18 @@
+{
+    "fragen": [
+      {
+        "frage": "Frage 1 für MGC: Wie beurteilen Sie ...?",
+        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
+      },
+      {
+        "frage": "Frage 2 für MGC: Was denken Sie über ...?",
+        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
+      },
+      {
+        "frage": "Frage 3 für MGC: Wie wichtig ist ...?",
+        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
+      }
+     
+    ]
+  }
+  

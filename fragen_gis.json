@@ -1,0 +1,61 @@
+{
+    
+     "fragen": [
+      {
+        "frage": "Wie viele Accounts sind aktuell eingerichtet?",
+        "antworten": ["<= 10", "<= 50", "<= 100", "> 100"]
+      },
+      {
+        "frage": "Wie viele Accounts davon werden nicht aktiv genutzt?",
+        "freitext": true
+      },
+      {
+        "frage": "Wie viele verschiedene Rollen gibt es?",
+        "antworten": ["1", "2", "3", "4", "> 4"]
+      },
+      {
+        "frage": "Wie viele verschiedene Rollen gibt es?",
+        "antworten": ["1", "2", "3", "4", "> 4"]
+      },
+      {
+        "frage": "Welche Rollen gibt es zu welchem Zweck?",
+        "freitext": true
+      },
+      {
+        "frage": "Kann ein Account mehr als 1 Rolle innehaben?",
+        "antworten": ["ja", "nein"]
+      },
+      {
+        "frage": "Wenn ja, wie viele Rollen können für einen Account vergeben werden?",
+        "freitext": true
+      },
+      {
+        "frage": "Werden Rollen bei längerrer Abwesenheit gesperrt?",
+        "antworten": ["ja", "nein"]
+      },
+      {
+      "frage": "Wenn ja, nach welchem Zeitraum?",
+      "freitext": true
+    },
+    {
+        "frage": "Wie oft werden die zugewiesenen Rollen auf Aktualität überprüft?",
+        "antworten": ["1 x im Monat", "1 x im Quartal", "1 x im Jahr", "anderer Zeitraum"]
+      },
+      
+      {
+        "frage": "Wenn anderer Zeitraum, wann?",
+        "freitext": true
+      }
+      
+    ]
+   
+  }
+
+      
+
+
+    
+      
+
+  
+  
