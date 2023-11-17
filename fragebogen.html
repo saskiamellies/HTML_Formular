@@ -1,90 +1,42 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Autor" content="Saskia Mellies">
     <meta name="description" content="Ist-Erfassung-IT-Sicherheit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="zeigeFragenAnhandAntworten.js" async></script>
+    <script src="zeigeFrageAn.js" async></script>
+    <script src="ladenUndAnzeigen.js" async></script>
+    <script src="antwortenSenden.js" async></script>
+    <script src="downloadJSON.js" async></script>
     <title>Fragebogen</title>
-    <script>
-       function loadQuestionsFromJSON(jsonFileName) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var data = JSON.parse(xhr.responseText);
-                var fragen = data.fragen;
-
-                var questionsContainer = document.getElementById("questions-container");
-                questionsContainer.innerHTML = "";
-
-                fragen.forEach(function(frage, index) {
-                    var questionDiv = document.createElement("div");
-                    questionDiv.className = "question";
-                    questionDiv.innerHTML = "<label for='frage" + (index + 1) + "'>" + frage.frage + "</label>";
-
-                    if (frage.freitext) {
-                        var input = document.createElement("input");
-                        input.type = "text";
-                        input.id = "frage" + (index + 1);
-                        input.name = "frage" + (index + 1);
-                        questionDiv.appendChild(input);
-                    } else if (frage.antworten && frage.antworten.length > 1) {
-                        var select = document.createElement("select");
-                        select.id = "frage" + (index + 1);
-                        select.name = "frage" + (index + 1);
-
-                        frage.antworten.forEach(function(antwort) {
-                            var option = document.createElement("option");
-                            option.value = antwort;
-                            option.text = antwort;
-                            select.appendChild(option);
-                        });
-
-                        questionDiv.appendChild(select);
-                    }
-
-                    questionsContainer.appendChild(questionDiv);
-                });
-            }
-        };
-
-        xhr.open("GET", jsonFileName, true);
-        xhr.send();
-    }
-
-    function handleSubmit() {
-        var formElement = document.querySelector('form');
-        var formData = new FormData(formElement);
-
-        formData.forEach(function(value, key) {
-            formObject[key] = value;
-        });
-    }
-
-    function handleButton1() {
-        loadQuestionsFromJSON("fragen_gis.json");
-    }
-
-    function handleButton2() {
-        loadQuestionsFromJSON("fragen_mgc.json");
-    }
-    </script>
 </head>
+
 <body>
+
     <h1>Erfassung IT-Sicherheit</h1>
     <div id="intro-text">
-        <textarea rows="4" placeholder="Mit diesem Fragebogen soll ermittelt werden, in welchem Maß wir die erforderlichen Maßnahmen
-        im Bezug auf die IT-Sicherheit umsetzen. Aus den gegebenen Antworten wird sowohl ein Ranking erstellt, als auch schnell erkennbar sein,
-        an welchen Stellen wir Maßnahmen zur Umsetzung der Gesetze und Richtlinien ergreifen müssen.
-        Dieses Formular soll idealerweise vom Applikationsverantwortlichen, ansosnten von einem adäquaten Ersatz ausgefüllt werden."></textarea>
+        <!-- Zweck des Fragebogens -->
+        <textarea rows="4"
+            placeholder="Mit diesem Fragebogen soll ermittelt werden, in welchem Maß wir die erforderlichen Maßnahmen im Bezug auf die IT-Sicherheit umsetzen. Aus den gegebenen Antworten wird sowohl ein Ranking erstellt, als auch schnell erkennbar sein, an welchen Stellen wir Maßnahmen zur Umsetzung der Gesetze und Richtlinien ergreifen müssen. Dieses Formular soll idealerweise vom Applikationsverantwortlichen, ansonsten von einem adäquaten Ersatz ausgefüllt werden."></textarea>
     </div>
-    <form onsubmit="handleSubmit(); return false;">
-
-        <div id="questions-container"></div>
-        <button type="button" onclick="handleButton1()">GIS</button>
-        <button type="button" onclick="handleButton2()">MGC</button>   
+    <!-- Auswahl der gewünschten Applikation -->
+    <form id="Fragebogen">
+        <label for="AuswahlApplikation">Um welche Applikation handelt es sich?</label>
+        <select id="Applikation" name="AuswahlApplikation">
+            <option value="fragen_gis">GIS</option>
+            <option value="fragen_mgc">MGC</option>
+        </select>
+        <button type="button" onclick="ladenUndAnzeigen()">Auswahl bestätigen</button>
     </form>
-  
+    <div id="fragenUndAntworten" style="display: none;">
+        <div id="fragenContainer"></div>
+        <button type="button" onclick="antwortenAbsenden()">Antworten absenden</button>
+        <button type="button" onclick="downloadJSON()">Daten herunterladen</button>
+    </div>
 </body>
+
 </html>
