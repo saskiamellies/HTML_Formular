@@ -1,18 +1,88 @@
 {
-    "fragen": [
-      {
-        "frage": "Frage 1 für MGC: Wie beurteilen Sie ...?",
-        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
-      },
-      {
-        "frage": "Frage 2 für MGC: Was denken Sie über ...?",
-        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
-      },
-      {
-        "frage": "Frage 3 für MGC: Wie wichtig ist ...?",
-        "antworten": ["Antwort 1", "Antwort 2", "Antwort 3"]
-      }
-     
-    ]
-  }
-  
+  "fragen": [
+    {
+      "frage": "Wie viele Accounts sind aktuell eingerichtet?",
+      "antworten": [
+        "weniger oder gleich 10",
+        "weniger oder gleich 50",
+        "weniger oder gleich 100",
+        "mehr als 100"
+      ],
+      "id": "antwortAuswahl_Wie-viele-Accounts-sind-aktuell-eingerichtet"
+    },
+    {
+      "frage": "Wie viele Accounts davon werden nicht aktiv genutzt?",
+      "freitext": true,
+      "beispielantwort": "0- Anzahl Accounts",
+      "id": "freitextAntwort_Wie-viele-Accounts-davon-werden-nicht-aktiv-genutzt"
+    },
+    {
+      "frage": "Wie viele verschiedene Rollen gibt es?",
+      "antworten": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "mehr als 4"
+      ],
+      "id": "antwortAuswahl_Wie-viele-verschiedene-Rollen-gibt-es"
+    },
+    {
+      "frage": "Bennen Sie die Rollen und den Zweck:",
+      "freitext": true,
+      "beispielantwort": "ex: Externer DL, te: testuser etc.",
+      "abhaengigkeitVonFrage": "Wie viele verschiedene Rollen gibt es?",
+      "abhaengigkeitAntwort": "mehr als 4",
+      "id": "freitextAntwort_Bennen-Sie-die-Rollen-und-den-Zweck"
+    },
+    {
+      "frage": "Kann ein Account mehr als 1 Rolle besitzen?",
+      "antworten": [
+        "ja",
+        "nein"
+      ],
+      "id": "antwortAuswahl_Kann ein Account mehr als 1 Rolle besitzen"
+    },
+    {
+      "frage": "Wie viele Rollen können für einen Account vergeben werden?",
+      "freitext": true,
+      "beispielantwort": "0- Anzahl Rollen",
+      "abhaengigkeitVonFrage": "Kann ein Account mehr als 1 Rolle besitzen",
+      "abhaengigkeitAntwort": "ja",
+      "id": "freitextAntwort_Wie-viele-Rollen-können-für-einen-Account-vergeben-werden"
+    },
+    {
+      "frage": "Werden Accounts bei längerer Abwesenheit gesperrt?",
+      "antworten": [
+        "ja",
+        "nein"
+      ],
+      "id": "antwortAuswahl_Werden-Accounts-bei-längerer-Abwesenheit-gesperrt"
+    },
+    {
+      "frage": "Nach welchem Zeitraum werden diese gesperrt?",
+      "freitext": true,
+      "abhaengigkeitVonFrage": "Werden Accounts bei längerer Abwesenheit gesperrt?",
+      "abhaengigkeitAntwort": "ja",
+      "id": "freitextAntwort_Nach-welchem-Zeitraum-werden-diese-gesperrt"
+    },
+    {
+      "frage": "Wie oft werden die zugewiesenen Rollen auf Aktualität überprüft?",
+      "antworten": [
+        "1 x im Monat",
+        "1 x im Quartal",
+        "1 x im Jahr",
+        "anderer Zeitraum",
+        "nie"
+      ],
+      "id": "antwortAuswahl_Wie-oft-werden-die-zugewiesenen-Rollen-auf-Aktualität-überprüft"
+    },
+    {
+      "frage": "In welchem Intervall wird geprüft?",
+      "freitext": true,
+      "abhaengigkeitVonFrage": "Wie oft werden die zugewiesenen Rollen auf Aktualität überprüft?",
+      "abhaengigkeitAntwort": "anderer Zeitraum",
+      "id": "freitextAntwort_In-welchem-Intervall-wird-geprüft"
+    }
+  ]
+}
