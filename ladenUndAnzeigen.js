@@ -10,7 +10,5 @@ async function ladenUndAnzeigen() {
         console.error('Fehler beim Laden der JSON-Datei:', error);
     }
 
-    
-
-        document.getElementById("fragenUndAntworten").style.display = "block";
-    }
+    document.getElementById("fragenUndAntworten").style.display = "block";
+}

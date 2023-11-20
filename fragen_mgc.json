@@ -8,13 +8,13 @@
         "weniger oder gleich 100",
         "mehr als 100"
       ],
-      "id": "antwortAuswahl_Wie-viele-Accounts-sind-aktuell-eingerichtet"
+      "id": 1
     },
     {
       "frage": "Wie viele Accounts davon werden nicht aktiv genutzt?",
       "freitext": true,
       "beispielantwort": "0- Anzahl Accounts",
-      "id": "freitextAntwort_Wie-viele-Accounts-davon-werden-nicht-aktiv-genutzt"
+      "id": 2
     },
     {
       "frage": "Wie viele verschiedene Rollen gibt es?",
@@ -25,15 +25,15 @@
         "4",
         "mehr als 4"
       ],
-      "id": "antwortAuswahl_Wie-viele-verschiedene-Rollen-gibt-es"
+      "id": 3
     },
     {
       "frage": "Bennen Sie die Rollen und den Zweck:",
       "freitext": true,
       "beispielantwort": "ex: Externer DL, te: testuser etc.",
-      "abhaengigkeitVonFrage": "Wie viele verschiedene Rollen gibt es?",
-      "abhaengigkeitAntwort": "mehr als 4",
-      "id": "freitextAntwort_Bennen-Sie-die-Rollen-und-den-Zweck"
+      "abhaengigkeitVonFrage": 3,
+      "abhaengigkeitAntwort": [ "2","3","4","mehr als 4"],
+      "id": 4
     },
     {
       "frage": "Kann ein Account mehr als 1 Rolle besitzen?",
@@ -41,15 +41,15 @@
         "ja",
         "nein"
       ],
-      "id": "antwortAuswahl_Kann ein Account mehr als 1 Rolle besitzen"
+      "id": 5
     },
     {
       "frage": "Wie viele Rollen können für einen Account vergeben werden?",
       "freitext": true,
       "beispielantwort": "0- Anzahl Rollen",
-      "abhaengigkeitVonFrage": "Kann ein Account mehr als 1 Rolle besitzen",
-      "abhaengigkeitAntwort": "ja",
-      "id": "freitextAntwort_Wie-viele-Rollen-können-für-einen-Account-vergeben-werden"
+      "abhaengigkeitVonFrage": 5,
+      "abhaengigkeitAntwort": ["ja"],
+      "id": 6
     },
     {
       "frage": "Werden Accounts bei längerer Abwesenheit gesperrt?",
@@ -57,14 +57,14 @@
         "ja",
         "nein"
       ],
-      "id": "antwortAuswahl_Werden-Accounts-bei-längerer-Abwesenheit-gesperrt"
+      "id": 7
     },
     {
       "frage": "Nach welchem Zeitraum werden diese gesperrt?",
       "freitext": true,
-      "abhaengigkeitVonFrage": "Werden Accounts bei längerer Abwesenheit gesperrt?",
-      "abhaengigkeitAntwort": "ja",
-      "id": "freitextAntwort_Nach-welchem-Zeitraum-werden-diese-gesperrt"
+      "abhaengigkeitVonFrage": 7,
+      "abhaengigkeitAntwort": ["ja"],
+      "id": 8
     },
     {
       "frage": "Wie oft werden die zugewiesenen Rollen auf Aktualität überprüft?",
@@ -75,14 +75,14 @@
         "anderer Zeitraum",
         "nie"
       ],
-      "id": "antwortAuswahl_Wie-oft-werden-die-zugewiesenen-Rollen-auf-Aktualität-überprüft"
+      "id": 9
     },
     {
       "frage": "In welchem Intervall wird geprüft?",
       "freitext": true,
-      "abhaengigkeitVonFrage": "Wie oft werden die zugewiesenen Rollen auf Aktualität überprüft?",
-      "abhaengigkeitAntwort": "anderer Zeitraum",
-      "id": "freitextAntwort_In-welchem-Intervall-wird-geprüft"
+      "abhaengigkeitVonFrage": 9,
+      "abhaengigkeitAntwort": ["anderer Zeitraum"],
+      "id": 10
     }
   ]
 }

@@ -3,30 +3,35 @@ function zeigeFragenAnhandAntworten() {
 
     fragenContainer.innerHTML = "";
 
-    jsonDaten.fragen.forEach(frageObjekt => {
+    jsonDaten.fragen.forEach(aktuelleFrage => {
         let abhaengigkeitsFrage; // Deklaration innerhalb der Schleife
 
         // Prüfe auf Abhängigkeit von einer vorherigen Frage
-        if (frageObjekt.abhaengigkeitVonFrage) {
-            abhaengigkeitsFrage = jsonDaten.fragen.find(f => f.frage === frageObjekt.abhaengigkeitVonFrage);
+        if (aktuelleFrage.abhaengigkeitVonFrage) {
+            // abhaengigkeitsFrage = jsonDaten.fragen.find(f => f.id === aktuelleFrage.abhaengigkeitVonFrage);
+            // console.log(abhaengigkeitsFrage)
+            // console.log(aktuelleFrage.abhaengigkeitVonFrage)
 
-            // Überprüfe, ob die abhängige Frage gefunden wurde
-            if (abhaengigkeitsFrage) {
-                const abhaengigkeitsAntwortElement = document.getElementById(`antwortAuswahl_${abhaengigkeitsFrage.id}`);
-                const abhaengigkeitsAntwort = abhaengigkeitsAntwortElement ? abhaengigkeitsAntwortElement.value : "";
+            zeigeFrageAn(aktuelleFrage, fragenContainer, aktuelleFrage.abhaengigkeitVonFrage, aktuelleFrage.abhaengigkeitAntwort);
 
-                // Überprüfe, ob die Bedingung erfüllt ist
-                if (Array.isArray(frageObjekt.abhaengigkeitAntwort) && frageObjekt.abhaengigkeitAntwort.includes(abhaengigkeitsAntwort)) {
-                    zeigeFrageAn(frageObjekt, fragenContainer);
-                } else if (frageObjekt.abhaengigkeitAntwort === abhaengigkeitsAntwort) {
-                    zeigeFrageAn(frageObjekt, fragenContainer);
-                }
-            } else {
-                console.error('Abhängige Frage nicht gefunden:', frageObjekt.abhaengigkeitVonFrage);
-            }
+
+        //     // Überprüfe, ob die abhängige Frage gefunden wurde
+        //     if (abhaengigkeitsFrage) {
+        //         const abhaengigkeitsAntwortElement = document.getElementById(`antwortAuswahl_${abhaengigkeitsFrage.id}`);
+        //         const abhaengigkeitsAntwort = abhaengigkeitsAntwortElement ? abhaengigkeitsAntwortElement.value : "";
+
+        //         // Überprüfe, ob die Bedingung erfüllt ist
+        //         if (Array.isArray(aktuelleFrage.abhaengigkeitAntwort) && aktuelleFrage.abhaengigkeitAntwort.includes(abhaengigkeitsAntwort)) {
+        //             zeigeFrageAn(aktuelleFrage, fragenContainer);
+        //         } else if (aktuelleFrage.abhaengigkeitAntwort === abhaengigkeitsAntwort) {
+        //             zeigeFrageAn(aktuelleFrage, fragenContainer);
+        //         }
+        //     } else {
+        //         console.error('Abhängige Frage nicht gefunden:', aktuelleFrage.abhaengigkeitVonFrage);
+        //     }
         } else {
             // Wenn keine Abhängigkeit vorhanden ist, zeige die Frage einfach an
-            zeigeFrageAn(frageObjekt, fragenContainer);
+            zeigeFrageAn(aktuelleFrage, fragenContainer);
         }
     });
 
